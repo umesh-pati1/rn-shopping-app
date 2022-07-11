@@ -15,16 +15,15 @@ const ItemList = () => {
   const [selectedId, setSelectedId] = useState(-1);
 
   const toggleDialogVisible = canAdd => {
-    if (canAdd)
-      if (!cartIds.includes(selectedId)) {
-        dispatch(addCartItem(selectedId));
-      } else {
-        alert('Item is already exists in cart');
-      }
+    canAdd && dispatch(addCartItem(selectedId));
     setDialogVisible(!dialogVisible);
   };
 
   const showDialog = id => {
+    if (cartIds.includes(id)) {
+      alert('Item is already exists in cart');
+      return;
+    }
     setDialogVisible(true);
     setSelectedId(id);
   };

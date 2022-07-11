@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Shopping Cart" component={ShoppingCart} />
+      <Stack.Screen name="ShoppingCart" component={ShoppingCart} options={{title:"Shopping Cart"}} />
     </Stack.Navigator>
   );
 };
